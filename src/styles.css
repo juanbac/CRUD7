@@ -13,3 +13,8 @@ div.container {
 form.normal-form {
     margin: 10px;
 }
+
+.control-container {
+    width: 100%;
+    padding: 5%;
+}
