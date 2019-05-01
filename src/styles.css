@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+div.container {
+    margin: 0px 40px;
+}
+
+.fill-remaining-space {
+    /* Esto rellena el espacio sobrante, para usar Flexbox 
+       Todos los filas toolbar usan una capa de fila Flexbox */
+    flex: 1 1 auto;
+}
