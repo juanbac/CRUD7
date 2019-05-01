@@ -10,3 +10,6 @@ div.container {
        Todos los filas toolbar usan una capa de fila Flexbox */
     flex: 1 1 auto;
 }
+form.normal-form {
+    margin: 10px;
+}
