@@ -10,7 +10,7 @@ export class EmployeeService {
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
-    fullname: new FormControl(''),
+    fullName: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),
     city: new FormControl(''),
