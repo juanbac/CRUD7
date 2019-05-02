@@ -10,14 +10,16 @@ import * as Material from '@angular/material';
     Material.MatGridListModule,
     Material.MatFormFieldModule,
     Material.MatInputModule,
-    Material.MatRadioModule
+    Material.MatRadioModule,
+    Material.MatSelectModule
   ],
   exports : [
     Material.MatToolbarModule,
     Material.MatGridListModule,
     Material.MatFormFieldModule,
     Material.MatInputModule,
-    Material.MatRadioModule
+    Material.MatRadioModule,
+    Material.MatSelectModule
   ]
 })
 export class MaterialModule { }
