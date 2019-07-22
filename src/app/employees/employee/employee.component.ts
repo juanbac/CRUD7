@@ -21,14 +21,13 @@ export class EmployeeComponent implements OnInit {
   onClear() {
     this.service.form.reset();
     this.service.initializeFormGroup();
-    this.notificationService.success(':: Envío finalizado');
-  }
+}
   onSubmit() {
     if(this.service.form.valid) {
       this.service.insertEmployees(this.service.form.value);
       this.service.form.reset();
       this.service.initializeFormGroup();
-      // this.notificationService.success(':: Envío finalizado');
+      this.notificationService.success(':: Envío finalizado');
     }
   }
 }
