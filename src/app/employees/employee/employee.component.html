@@ -1,19 +1,23 @@
-<form [formGroup]="service.form" class="normal-form">
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
-          <input formControlName="fullName" matInput placeholder="Nombre Completo">
+          <input formControlName="fullName" matInput placeholder="Nombre Completo *">
+          <mat-error>Este campo es obligatorio.</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="email" matInput placeholder="Correo electrónico">
+          <input formControlName="email" matInput placeholder="Correo electrónico">
+          <mat-error>Dirección de correo no válida.</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="mobile" matInput placeholder="Celular">
+          <input formControlName="mobile" matInput placeholder="Celular *">
+          <mat-error *ngIf="service.form.controls['mobile'].errors?.required">Este campo es obligatorio.</mat-error>
+          <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Mínimo 8 caracteres.</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="city" matInput placeholder="Ciudad">
+          <input formControlName="city" matInput placeholder="Ciudad">
         </mat-form-field>
       </div>
     </mat-grid-tile>
@@ -29,8 +33,8 @@
         <mat-form-field>
           <mat-select formControlName="department" placeholder="Departamento">
             <mat-option>Ninguna</mat-option>
-            <ng-container *ngFor="let department of departments">
-              <mat-option value="{{department.id}}">{{department.value}}</mat-option>
+            <ng-container *ngFor="let department of departmentService.array">
+              <mat-option value="{{department.$key}}">{{department.code}}-{{department.name}}</mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>
@@ -43,10 +47,10 @@
           <mat-checkbox formControlName="isPermanent">Empleado permanente</mat-checkbox>
         </div>
         <div class="button-row">
-          <button mat-raised-button color="primary" type="submit">Enviar</button>
-          <button mat-raised-button color="warn">Limpiar</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Enviar</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Limpiar</button>
         </div>
-       </div>
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
 
