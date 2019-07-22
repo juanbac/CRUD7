@@ -12,6 +12,7 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeService } from './shared/employee.service';
 import { environment } from '../environments/environment';
 import { DepartmentService } from './shared/department.service';
+import { NotificationService } from './shared/notification.service';
 /* Revisar */
 import { from } from 'rxjs';
 
@@ -29,7 +30,7 @@ import { from } from 'rxjs';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
 ],
-  providers: [EmployeeService, DepartmentService],
+  providers: [EmployeeService, DepartmentService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
