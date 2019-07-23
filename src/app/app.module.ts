@@ -15,12 +15,14 @@ import { DepartmentService } from './shared/department.service';
 import { NotificationService } from './shared/notification.service';
 /* Revisar */
 import { from } from 'rxjs';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
