@@ -1,20 +1,31 @@
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData">
     <ng-container matColumnDef="fullName">
-        <mat-header-cell *matHeaderCellDef>Nombre Completo</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.fullName}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef>Nombre Completo</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.fullName}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef>Correo</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef>Correo</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="mobile">
-        <mat-header-cell *matHeaderCellDef>Celular</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.mobile}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef>Celular</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.mobile}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="city">
-        <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+          <button mat-icon-button>
+              <mat-icon>launch</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+      </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
