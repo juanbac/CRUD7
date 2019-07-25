@@ -40,7 +40,7 @@ export class EmployeeService {
     this.employeeList = this.firebase.list('employees');
     return this.employeeList.snapshotChanges();
   }
-  insertEmployees(employee) {
+  insertEmployees(employee: any) {
     this.employeeList.push({
       fullName: employee.fullName,
       email: employee.email,

@@ -1,19 +1,19 @@
 <div class="mat-elevation-z8">
-  <mat-table [dataSource]="listData">
+  <mat-table [dataSource]="listData" matSort>
     <ng-container matColumnDef="fullName">
-      <mat-header-cell *matHeaderCellDef>Nombre Completo</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre Completo</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.fullName}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>Correo</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Correo</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="mobile">
-      <mat-header-cell *matHeaderCellDef>Celular</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Celular</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.mobile}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="city">
-      <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Ciudad</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="actions">
