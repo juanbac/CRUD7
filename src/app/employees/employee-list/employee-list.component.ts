@@ -32,5 +32,11 @@ export class EmployeeListComponent implements OnInit {
       }
     );
   }
-
+onSearchClear() {
+  this.searchKey = '';
+  this.applyFilter();
+}
+applyFilter() {
+  this.listData.filter = this.searchKey.trim().toLocaleLowerCase();
+}
 }
