@@ -39,6 +39,10 @@ snack-bar-container.success {
     color: #fff;
 }
 
+nack-bar-container.warn {
+    background-color: #f99157;
+    color: #fff;
+}
 snack-bar-container.notification simple-snack-bar {
     font-size: 18px !important;
     font-weight: bold;
@@ -76,4 +80,12 @@ mat-footer-row mat-footer-cell{
 .search-form-field div.mat-form-field-suffix button{
     height: 32px;
     width: 32px;
+}
+
+/* Para ventana de formulario (Create, Update)  */
+.btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
 }

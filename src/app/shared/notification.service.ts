@@ -12,9 +12,14 @@ export class NotificationService {
     duration: 3000,
     horizontalPosition: 'right',
     verticalPosition: 'top'
-}
+  };
   success(msg: string) {
     this.config['panelClass'] = ['notification', 'success'];
+    this.snackBar.open(msg, '', this.config);
+  }
+
+  warn(msg){
+    this.config['panelClass'] = ['notification', 'warn'];
     this.snackBar.open(msg, '', this.config);
   }
 }

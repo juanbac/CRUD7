@@ -4,6 +4,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { DepartmentService } from 'src/app/shared/department.service';
 import { MatDialog, MatDialogConfig} from '@angular/material';
 import { EmployeeComponent } from '../employee/employee.component';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -14,7 +15,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private service: EmployeeService,
               private departmentService: DepartmentService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private notificationService: NotificationService) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName', 'actions'];
@@ -67,5 +69,12 @@ export class EmployeeListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
     this.dialog.open(EmployeeComponent, dialogConfig);
+  }
+
+  onDelete($key: string) {
+    if (confirm('Seguro que deseas eliminar este registro ?')) {
+      this.service.deleteEmployee($key);
+      this.notificationService.warn('! Registro eliminado');
+    }
   }
 }
