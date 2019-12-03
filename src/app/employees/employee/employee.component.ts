@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { EmployeeService } from '../../shared/employee.service';
 import { DepartmentService } from '../../shared/department.service';
