@@ -3,6 +3,6 @@
     <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
     <div class="content-span full-width">{{data.message}}</div>
   </div>
-  <button mat-flat-button id="no-button">No</button>
-  <button mat-flat-button id="yes-button">Si</button>
+  <button mat-flat-button id="no-button" [mat-dialog-close]="false">No</button>
+  <button mat-flat-button id="yes-button"[mat-dialog-close]="true">Si</button>
 </div>

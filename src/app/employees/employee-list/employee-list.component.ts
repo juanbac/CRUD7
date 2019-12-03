@@ -22,8 +22,8 @@ export class EmployeeListComponent implements OnInit {
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName', 'actions'];
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   searchKey: string;
 
   ngOnInit() {
@@ -74,11 +74,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   onDelete($key: string) {
-    // if (confirm('Seguro que deseas eliminar este registro ?')) {
-    //   this.service.deleteEmployee($key);
-    //   this.notificationService.warn('! Registro eliminado');
-    // }
-
-    this.dialogService.openConfirmDialog('Seguro que deseas eliminar este registro ?');
+    this.dialogService.openConfirmDialog('Seguro que deseas eliminar este registro ?')
+    .afterClosed().subscribe( res => {
+      if (res) {
+      this.service.deleteEmployee($key);
+      this.notificationService.warn('! Registro eliminado');
+      }
+    });
   }
 }
